@@ -7,10 +7,10 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        body: GradientContainer(),
+        body: GradientContainer.purple(),
       ),
     ),
-  );
+    );
 }
 
 
