@@ -9,7 +9,7 @@ class TextName extends StatelessWidget{
   Widget build(context){
     return Text(
       text, 
-      style: TextStyle(
+      style: const TextStyle(
         color: Colors.white,
         fontSize: 28.0,
     ));

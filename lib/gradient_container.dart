@@ -1,26 +1,23 @@
+import 'package:first_app/role_dice.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app/text_name.dart';
+import 'package:first_app/role_dice.dart';
+import 'package:first_app/ganti_hp_burik.dart';
 
 const startAlignment = Alignment.topLeft;
 const endAlignment = Alignment.bottomRight;
 
 class GradientContainer extends StatelessWidget{
-  GradientContainer(Color this.color1, Color this.color2, {super.key});
+  const GradientContainer(Color this.color1, Color this.color2, {super.key});
 
-  GradientContainer.purple({super.key})
+  const GradientContainer.purple({super.key})
     : color1 = Colors.white,
       color2 = Colors.blue;
 
   final Color color1;
   final Color color2;
 
-  var activeDiceImage = './assets/images/dice-2.png';
-
-  void rollDice() {
-      activeDiceImage = './assets/images/dice-4.png';
-      print("Changing image...");
-  }
-
+ 
   @override
   Widget build(context) {
     return  Container(
@@ -32,27 +29,7 @@ class GradientContainer extends StatelessWidget{
             ),
           ),
           child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [ 
-                Image.asset(
-                activeDiceImage, 
-                width: 200
-                ),
-                const SizedBox(height: 20),
-                TextButton(
-                  onPressed: rollDice,
-                  style: TextButton.styleFrom(
-                    // padding: const EdgeInsets.only(top: 20),
-                    foregroundColor: Colors.white, 
-                    textStyle: const TextStyle(
-                      fontSize: 28
-                    ),
-                    ),
-                  child: const Text('Roll Dice'),
-                )
-                ],
-              ),
+            child: DiceRoller();
           ),
         );
       }
